@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ride Booking and Sharing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #E4F1FE;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1E90FF;
+      padding: 20px;
+    }
+
+    h1 {
+      color: white;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #F4F8FB;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .search-bar {
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      width: 250px;
+      font-size: 16px;
+    }
+
+    .search-button {
+      background-color: #1E90FF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .search-button:hover {
+      background-color: #1873CE;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #1E90FF;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #F4F8FB;
+    }
+    
+    .booking-message {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function bookNow(name) {
+      // Display booking message
+      var bookingMessage = "Booking successful for " + name;
+      document.getElementById("bookingMessage").textContent = bookingMessage;
+    }
+
+    function generateRandomDistance() {
+      var randomDistance = Math.floor(Math.random() * 100) + 1;
+      document.getElementById("randomDistance").textContent = "Distance: " + randomDistance + " km";
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Ride Booking and Sharing</h1>
+  </header>
+  <a style="text-decoration: none; color:red;width:20px;" href="carbon_emission">click here to check the carbon emission</a>
+
+  <div class="container">
+    <div class="search-container">
+      <input type="text" class="search-bar" placeholder="From location" id="fromLocation">
+      <input type="text" class="search-bar" placeholder="To location" id="toLocation">
+      <input type="date" class="search-bar" id="date">
+      <button class="search-button" onclick="generateRandomDistance()">Search</button>
+    </div>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Phone No.</th>
+        <th>Leaving</th>
+        <th>Going</th>
+        <th>People</th>
+        <th>Booking</th>
+      </tr>
+      <tr>
+        <td>John Doe</td>
+        <td>123-456-7890</td>
+        <td>New York</td>
+        <td>Los Angeles</td>
+        <td>2</td>
+        <td><button onclick="bookNow('John Doe')">Book Now</button></td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>987-654-3210</td>
+        <td>Chicago</td>
+        <td>Miami</td>
+        <td>3</td>
+        <td><button onclick="bookNow('Jane Smith')">Book Now</button></td>
+      </tr>
+      <tr>
+        <tr>
+          <td>Michael Johnson</td>
+          <td>555-123-4567</td>
+          <td>San Francisco</td>
+          <td>Seattle</td>
+          <td>1</td>
+          <td><button onclick="bookNow('Michael Johnson')">Book Now</button></td>
+        </tr>
+        <tr>
+          <td>Sarah Thompson</td>
+          <td>111-222-3333</td>
+          <td>Boston</td>
+          <td>Washington, D.C.</td>
+          <td>4</td>
+          <td><button onclick="bookNow('Sarah Thompson')">Book Now</button></td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </table>
+
+      <div class="booking-message" id="bookingMessage"></div>
+      <div class="booking-message" id="randomDistance"></div>
+    </div>
+  </body>
+</html>

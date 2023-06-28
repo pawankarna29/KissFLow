@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CO2 Emission Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F4F7FC;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #32CD32;
+      padding: 20px;
+    }
+
+    h1 {
+      color: white;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .transportation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .transportation img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    .calculator-button {
+      background-color: #3c96dd;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .calculator-button:hover {
+      background-color: #297ac8;
+    }
+
+    .result-container {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .result-value {
+      font-size: 36px;
+      font-weight: bold;
+    }
+  </style>
+  <script>
+    function calculateEmission(transportMode) {
+      // Random value generation for demonstration purposes
+      var emissionValue = Math.random();
+
+      // Display the result on the page
+      document.getElementById('resultValue').textContent = emissionValue + ' kg CO2 emitted by ' + transportMode;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>CO2 Emission Calculator</h1>
+  </header>
+
+  <div class="container">
+    <div class="transportation">
+      <img src="/static/images/car.png" alt="Car">
+      <button class="calculator-button" onclick="calculateEmission('car')">Calculate Car Emission</button>
+    </div>
+
+    <div class="transportation">
+      <img src="/static/images/bus.png" alt="Bus">
+      <button class="calculator-button" onclick="calculateEmission('bus')">Calculate Bus Emission</button>
+    </div>
+
+    <div class="transportation">
+      <img src="/static/images/bike.png" alt="Bike">
+      <button class="calculator-button" onclick="calculateEmission('bike')">Calculate Bike Emission</button>
+    </div>
+
+    <div class="result-container">
+      <span class="result-value" id="resultValue"></span>
+    </div>
+  </div>
+</body>
+</html>
